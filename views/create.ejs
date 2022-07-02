@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CDN Boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>Ganado</title>
+</head>
+
+<body>
+    <!--Nabar -->
+    <header>
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1">Corrales Terneros</span>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <div class="container mt-4">
+            <div class="card border-secondary">
+                <div class="card-header">Nuevo Registro</div>
+                <div class="card-body">
+                    <form action="/save" method="POST">
+                        <div class="mb-3">
+                            <label for="peso">Peso</label>
+                            <input type="number" class="form-control" id="peso" name="peso" tabindex="1" value="" step="any">
+                        </div>
+                        <div class="mb-3">
+                            <label for="calidad">Calidad</label>
+                            <input type="number" class="form-control" id="calidad" name="calidad" value="" step="any">
+                        </div>
+                        <div class="mb-3">
+                            <label for="colorMusculo">Color del musculo</label>
+                            <input type="number" class="form-control" id="colorMusculo" name="colorMusculo" value="" step="any">
+                        </div>
+                        <div class="mb-3">
+                            <label for="temp">Temperatura</label>
+                            <input type="number" class="form-control" id="temp" name="temp" value="" step="any">
+                        </div>
+                        <div class="mb-3">
+                            <label for="freCard">Frecuencia cardiaca</label>
+                            <input type="number" class="form-control" id="freCard" name="freCard" value="" step="any">
+                        </div>
+                        <div class="mb-3">
+                            <label for="freRes">Frecuencia respiratoria</label>
+                            <input type="number" class="form-control" id="freRes" name="freRes" value="" step="any">
+                        </div>
+                        <div class="mb-3">
+                            <label for="fresSan">Frecuencia Sanguinea</label>
+                            <input type="number" class="form-control" id="fresSan" name="fresSan" value="" step="any">
+                        </div>
+                        <button type="submit" class="btn btn-primary" tabindex="5" onclick="confirmar()">Guardar</button>
+                        <a href="/"  class="btn btn-primary" tabindex="5">Cancelar</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    <script src="/router.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+        crossorigin="anonymous"></script>
+
+        <script>
+            function confirmar(){
+                Swal.fire({
+  title: 'Custom animation with Animate.css',
+  showClass: {
+    popup: 'animate__animated animate__fadeInDown'
+  },
+  hideClass: {
+    popup: 'animate__animated animate__fadeOutUp'
+  }
+})
+return res.redirect('/');  }
+        </script>
+</body>
+
+</html>
