@@ -48,7 +48,15 @@ router.get('/saludable', (req, res) => {
 })
 
 router.get('/enferma', (req, res) => {
-    conexion.query('SELECT * FROM ganado WHERE temp> 40 AND freCard <70 3 AND freCard>5 AND freRes BETWEEN 15 AND 20 AND fresSan BETWEEN 8 AND 10', (error, results) => {
+    conexion.query(`
+    SELECT * FROM Ganado 
+    WHERE 
+        temp> 40 
+        AND (freCard <70 
+        OR freCard > 80)
+        AND freRes BETWEEN 15 AND 20 
+        AND fresSan BETWEEN 8 AND 10
+    `, (error, results) => {
         if (error) {
             throw error;
         } else {

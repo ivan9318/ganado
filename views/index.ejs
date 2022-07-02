@@ -1,98 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CDN Boostrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-   <link rel="stylesheet" href="/assets/index.css">
-<title>Ganado</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CDN Boostrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <title>Ganado</title>
 </head>
+
 <body>
-      <!--Nabar -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top navbar-color sticky-top ">
-        <div class="container">
-          <a href="#" class="navbar-brand">Hogary</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="col-xs-4 navbar-nav mx-auto ms-auto py-2 text-menu">
-              <li class="nav-item">
-                <!--La clase active se debe de poner en cada página del en el navbar -->
-                <a href="/" class="nav-link active" aria-current="page">
-                  Inicio
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/grasa1" class="nav-link"> Crias grasa tipo 1 </a>
-              </li>
-              <li class="nav-item">
-                <a href="/grasa2" class="nav-link"> Crias grasa tipo 2 </a>
-              </li>
-              <li class="nav-item">
-                <a href="/saludable" class="nav-link"> Saludable</a>
-              </li>
-              <li class="nav-item">
-                <a href="/enferma" class="nav-link"> enferma </a>
-              </li>
-            </ul>
-            <ul class="navbar-nav col-xs-4 border-mq">
-              <li class="nav-item text-menu">
-                <a href="#" class="nav-link"> API </a>
-              </li>
-              <li class="nav-item text-menu">
-                <a href="#" class="nav-link"> Help </a>
-              </li>
-              <li class="nav-item text-menu">
-    
-                <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#modalLogin"> Login </a>
-              </li>
-    
-              <a href="/create" class="btn btn-primary btn-subir">Enviado</a>
-            </ul>
+  <!--Nabar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top navbar-color sticky-top " style="background-color: #FFF!important;
+      color:#03364D!important;
+      font-weight: 500!important;
+      opacity: 0.9!important;">
+    <div class="container">
+      <a href="#" class="navbar-brand" style="font-family: 'Roboto', sans-serif;
+          ;">Corrales Terneros</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="col-xs-4 navbar-nav mx-auto ms-auto py-2 text-menu">
+          <li class="nav-item">
+            <!--La clase active se debe de poner en cada página del en el navbar -->
+            <a href="/" class="nav-link active" aria-current="page" style="font-family: 'Roboto', sans-serif;
+                ;">
+              Inicio
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/grasa1" class="nav-link" style="font-family: 'Roboto', sans-serif;
+              ;"> Crias grasa tipo 1 </a>
+          </li>
+          <li class="nav-item">
+            <a href="/grasa2" class="nav-link" style="font-family: 'Roboto', sans-serif;
+                ;"> Crias grasa tipo 2 </a>
+          </li>
+          <li class="nav-item">
+            <a href="/saludable" class="nav-link" style="font-family: 'Roboto', sans-serif;
+                ;"> Saludable</a>
+          </li>
+          <li class="nav-item">
+            <a href="/enferma" class="nav-link" style="font-family: 'Roboto', sans-serif;
+                ;"> enferma </a>
+          </li>
+        </ul>
+        <a href="/create" class="btn btn-primary btn-subir" style="font-family: 'Roboto', sans-serif;
+              ; background-color:#03364D!important;
+    border-color: #FFF!important;
+    transition: .2s ease-in-out 0s;
+    border-radius: .5px;
+    padding: 5px 40px;">Enviado</a>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section>
+    <main>
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpanoramaagrario.com%2Fwp-content%2Fuploads%2F2014%2F09%2FCAMPOG1-scaled.jpg&f=1&nofb=1" class="d-block w-100 " alt="..." style="height: 500px;">
+          </div>
+          <div class="carousel-item">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi1.wp.com%2Frioja24.com.ar%2Fwp-content%2Fuploads%2F2020%2F10%2FGanado-Bovino.jpg&f=1&nofb=1" class="d-block w-100" alt="..." style="height: 500px;">
+          </div>
+          <div class="carousel-item">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstorage.contextoganadero.com%2Fs3fs-public%2Finternacional%2Ffield_image%2F2019-11%2Fganado_mexico_usa.jpeg&f=1&nofb=1" class="d-block w-100 " alt="..." style="height: 500px;">
           </div>
         </div>
-      </nav>
-<section>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">           <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </main>
 
-    <table class="table table-bordered table-striped text-center mt-4">
-        <thead>
-           <tr class="bg-black text-white">
-            <th scope="col">Id</th>
-                <th scope="col">Peso</th>
-                <th scope="col">Color Musculo</th>
-                <th scope="col">Calidad del marmoleado</th>
-                <th scope="col">Temperatura</th>
-                <th scope="col">Frecuencia cardiaca</th>
-                <th scope="col">Frecuencia resporatoria</th>
-                <th scope="col">Frecuencia Sanguinea</th>
-           </tr>
-        </thead>
-        <tbody>
-           <% results.forEach((ganado)=>{%>
-            <tr>
-                <td><%= ganado.idGanado %></td>
-                <td><%= ganado.Peso%></td>
-                <td><%= ganado.colorMusculo %></td>
-                <td><%= ganado.calidad%></td>
-                <td><%= ganado.temp %></td>
-                <td><%= ganado.freCard %></td>
-                <td><%= ganado.freRes %></td>
-                <td><%= ganado.fresSan %></td>
-            </tr>
-                <%})%>
-        </tbody>
+
+
+
+
+    <table id="ganado" class="table table-bordered table-striped text-center mt-4">
+      <thead>
+        <tr class="bg-black text-white">
+          <th scope="col">Id</th>
+          <th scope="col">Peso</th>
+          <th scope="col">Color Musculo</th>
+          <th scope="col">Calidad del marmoleado</th>
+          <th scope="col">Temperatura</th>
+          <th scope="col">Frecuencia cardiaca</th>
+          <th scope="col">Frecuencia resporatoria</th>
+          <th scope="col">Frecuencia Sanguinea</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% results.forEach((ganado)=>{%>
+          <tr>
+            <td>
+              <%= ganado.idGanado %>
+            </td>
+            <td>
+              <%= ganado.Peso%>
+            </td>
+            <td>
+              <%= ganado.colorMusculo %>
+            </td>
+            <td>
+              <%= ganado.calidad%>
+            </td>
+            <td>
+              <%= ganado.temp %>
+            </td>
+            <td>
+              <%= ganado.freCard %>
+            </td>
+            <td>
+              <%= ganado.freRes %>
+            </td>
+            <td>
+              <%= ganado.fresSan %>
+            </td>
+          </tr>
+          <%})%>
+      </tbody>
     </table>
-</section>
-<footer class="bg-light text-dark text-center pb-2 pt-4 footer-class">
-    <p>Inmobiliaria &copy; 2022 Todos los derechos Reservados</p>
-</footer> <!-- Termina footer -->
+  </section>
+  <section> <!-- Empieza el acerca de nosotros -->
+    <div class="container " >
+        <div class="row">
+            <h2 class="text-center pb-5">¿Quienes somos?</h2>
+            <div class="col-md-4">
+                <img src="http://www.diarioveterinario.com/images/showid/3691077" alt="" class="img-fluid rounded shadow-lg p-3 mb-5 bg-body">
+            </div>
+            <div class="col-md-8 text-center">
+                <h3>Corrales Terneros</h3>
+                <p>Somos una empresa bovina que se encarga del cuidado de sus vacas!</p>
+                <p>Contamos con los mejores especialistas en el area que cuidaran de tu ganado!</p>
+                <p>Llevamos tu producto al siguiente nivel!</p>
+                </div>
+        </div>
+    </div>
+  </section>
+  <section> <!-- Empieza el acerca de nosotros -->
+    <div class="container" >
+        <div class="row">
+            <h2 class="text-center pb-5">Acerca de mi</h2>
+          
+            <div class="col-md-8 text-center">
+                <h3>ingeniero biomedico</h3>
+                <p>Entusiasta de la informatica!</p>
+                <p>Profesional con conocimientos en desarrollo web fullstack, así como en datos herramientas de gestión.!</p>
+                <p>Siempre busco mejorar!</p>
+                </div>
 
-    <script src="/router.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+                <div class="col-md-4">
+                  <img src="http://www.diarioveterinario.com/images/showid/3691077" alt="" class="img-fluid rounded shadow-lg p-3 mb-8 bg-body">
+              </div>
+        </div>
+    </div>
+  </section>
+
+  <footer class="bg-light text-dark text-center pb-2 pt-4 footer-class" style="background-color: #FFF!important;
+color:#03364D!important;
+font-weight: 500!important;
+opacity: 0.9!important;">
+    <p>Corrales Terneros &copy; 2022 Todos los derechos Reservados</p>
+  </footer> <!-- Termina footer -->
+
+  <script>
+     AOS.init();
+    $(document).ready(function () {
+      $('#ganado').DataTable({
+
+      });
+    });
+  </script>
+
+
+
+  <script src="/router.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!--CDN Datatables-->
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+  <!--CDN boostrap-->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+    integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
